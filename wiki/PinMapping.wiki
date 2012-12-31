@@ -1,0 +1,32 @@
+#summary ROBO Pro to Arduino Pin mapping.
+#labels Pins,ROBOPro,Arduino
+
+
+= Arduino UNO =
+
+== Inputs ==
+
+|| *ROBO Pro* || *Arduino* || *Mode* ||
+|| I1 || 2 || Digital ||
+|| I2 || 3 || Digital ||
+|| I3 || 4 || Digital ||
+|| I4 || A0 || Analog ||
+|| I5 || A1 || Analog ||
+|| I6 || A2 || Analog ||
+|| I7 || - ||  ||
+|| I8 || - ||  ||
+
+== Outputs ==
+
+|| *ROBO Pro* || *Arduino* || *Mode* ||
+|| O1 || 8 || 1/0 ||
+|| O2 || 9 || Analog (0-8) ||
+|| O3 || 10 || Analog (0-8) ||
+|| O4 || 11 || Analog (0-8) ||
+|| O5 || 12 || 1/0 ||
+|| O6 || 13 || 1/0 ||
+|| O7 || - ||  ||
+|| O8 || - ||  ||
+
+
+
