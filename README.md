@@ -6,6 +6,16 @@ This is an Arduino library for communicating with ROBO Pro software over USB.
 
 The fx1-arduino-parser is a component that may be useful for a variety of projects, including educational tools. I want developers to be able to play with fx1-arduino-parser, give feedback, and think of novel uses for it. All the code is free and open source. Enjoy!
 
+##How to use it
+1. Download latest fx1-arduino-parser release.
+2. Open in Arduino IDE and Upload fx1-arduino-parser to board.
+3. Find which serial port used by Arduino.
+4. Start ROBO Pro.
+5. Setup Connection and Controller model: USB and ROBO TX.
+6. Choose Bluetooth connection type and then select COM port from STEP 3.
+7. Design flow-chart.
+8. Run it in Online mode.
+
 ##Pin mapping
 
 Inputs
@@ -34,6 +44,9 @@ Inputs
 | O6            | 11          | Analog (0-8) |
 | O7            | 12          | Digital      |
 | O8            | 13          | Digital      |
+
+##Links
+1. [Original discussion at the ftcommunity.de forum](http://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
 
 ##Version history:
 V0.2 - 03.09.2015. Changed output pins map. Now Arduino's pins 6-13 coresponds to ROBO TX pins O1-O8.
