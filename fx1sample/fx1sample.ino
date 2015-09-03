@@ -1,10 +1,11 @@
 //
 // Sample sketch for the Fish.X1 protocol parser
 // For more information please visit:
-// https://code.google.com/p/fx1-arduino-parser/
+// https://github.com/mr-kubikus/fx1-arduino-parser
 // http://forum.ftcommunity.de/viewtopic.php?f=8&t=1655
 //
 // Thanks to Ad2 for helpful information 
+// Thanks to https://www.facebook.com/fischertechnik.ru for support
 //
 
 #include "fx1.h"

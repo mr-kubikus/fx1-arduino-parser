@@ -3,12 +3,14 @@
 //
 
 // Outputs
-const int OUT1 =  8; //
-const int OUT2 =  9; // PWM
-const int OUT3 = 10; // PWM
-const int OUT4 = 11; // PWM
-const int OUT5 = 12; //
-const int OUT6 = 13; // 
+const int OUT1 =  6; //
+const int OUT2 =  7; //
+const int OUT3 =  8; //
+const int OUT4 =  9; // PWM
+const int OUT5 = 10; // PWM
+const int OUT6 = 11; // PWM
+const int OUT7 = 12; // 
+const int OUT8 = 13; // 
 
 // Inputs
 const int IN1 =  2; //
@@ -17,7 +19,8 @@ const int IN3 =  4; //
 const int IN4 = A0; // Analog
 const int IN5 = A1; // Analog
 const int IN6 = A2; // Analog
-
+const int IN7 = A3; // Analog
+const int IN8 = A4; // Analog
 
 void fx1ParserInit()
 {
@@ -33,13 +36,17 @@ void fx1ParserInit()
   pinMode(OUT4, OUTPUT);
   pinMode(OUT5, OUTPUT);
   pinMode(OUT6, OUTPUT);
-
+  pinMode(OUT7, OUTPUT);
+  pinMode(OUT8, OUTPUT);
+  
   digitalWrite(OUT1, LOW);
   digitalWrite(OUT2, LOW);
   digitalWrite(OUT3, LOW);
   digitalWrite(OUT4, LOW);
   digitalWrite(OUT5, LOW);
   digitalWrite(OUT6, LOW);
+  digitalWrite(OUT7, LOW);
+  digitalWrite(OUT8, LOW);
   
   // Configure the output pins:
   pinMode(IN1, INPUT_PULLUP);
@@ -207,20 +214,32 @@ void CMD002Reply(short nItems, unsigned char *data)
     digitalWrite(OUT1, LOW);
   }
 
-  analogWrite(OUT2, constrain(request->X1Data.duty[1] / 2 , 0, 255));
-  analogWrite(OUT3, constrain(request->X1Data.duty[2] / 2 , 0, 255)); 
-  analogWrite(OUT4, constrain(request->X1Data.duty[3] / 2 , 0, 255));
-    
-  if (request->X1Data.duty[4] != 0) {
-    digitalWrite(OUT5, HIGH);
+  if (request->X1Data.duty[1] != 0) {
+    digitalWrite(OUT2, HIGH);
   } else {
-    digitalWrite(OUT5, LOW);
+    digitalWrite(OUT2, LOW);
+  }
+
+  if (request->X1Data.duty[2] != 0) {
+    digitalWrite(OUT3, HIGH);
+  } else {
+    digitalWrite(OUT3, LOW);
+  }
+
+  analogWrite(OUT4, constrain(request->X1Data.duty[3] / 2 , 0, 255));
+  analogWrite(OUT5, constrain(request->X1Data.duty[4] / 2 , 0, 255)); 
+  analogWrite(OUT6, constrain(request->X1Data.duty[5] / 2 , 0, 255));
+    
+  if (request->X1Data.duty[6] != 0) {
+    digitalWrite(OUT7, HIGH);
+  } else {
+    digitalWrite(OUT7, LOW);
   }
   
-  if (request->X1Data.duty[5] != 0) {
-    digitalWrite(OUT6, HIGH);
+  if (request->X1Data.duty[7] != 0) {
+    digitalWrite(OUT8, HIGH);
   } else {
-    digitalWrite(OUT6, LOW);
+    digitalWrite(OUT8, LOW);
   }
   
   CMD002_REPLY *reply = (CMD002_REPLY *) data;  
@@ -233,8 +252,8 @@ void CMD002Reply(short nItems, unsigned char *data)
   reply->X1Data.uni[3]=map(analogRead(IN4), 0, 1023, 0, 500);
   reply->X1Data.uni[4]=map(analogRead(IN5), 0, 1023, 0, 500);
   reply->X1Data.uni[5]=map(analogRead(IN6), 0, 1023, 0, 500);
-  reply->X1Data.uni[6]=0x00;
-  reply->X1Data.uni[7]=0x00;
+  reply->X1Data.uni[6]=map(analogRead(IN7), 0, 1023, 0, 500);
+  reply->X1Data.uni[7]=map(analogRead(IN8), 0, 1023, 0, 500);
   
   sendX1Data(txData, CMD_002_REPLY, 1, (unsigned char*)reply, sizeof(CMD002_REPLY)); 
 }
@@ -261,15 +280,15 @@ void CMD006Reply(short nItems, unsigned char *data)
   reply->X1Data.pgm_area_start_addr = 0; // Sniffed value 0x30700000
   reply->X1Data.pgm_area_size = 0;       // Sniffed value 0x000d0000
   
-  reply->X1Data.version.hardware.part.a = 0x43;
+  reply->X1Data.version.hardware.part.a = 0x43; // 67
   reply->X1Data.version.hardware.part.b = 0x00;
   reply->X1Data.version.hardware.part.c = 0x00;
   reply->X1Data.version.hardware.part.d = 0x00; 
   
-  reply->X1Data.version.firmware.part.a = 0x00;
-  reply->X1Data.version.firmware.part.b = 0x05;  
-  reply->X1Data.version.firmware.part.c = 0x01;
-  reply->X1Data.version.firmware.part.d = 0x1E;    
+  reply->X1Data.version.firmware.part.a = 0x00; // 0
+  reply->X1Data.version.firmware.part.b = 0x05; // 5 
+  reply->X1Data.version.firmware.part.c = 0x01; // 1
+  reply->X1Data.version.firmware.part.d = 0x1E; // 30  
 
   reply->X1Data.version.ta.part.a = 0x01;
   reply->X1Data.version.ta.part.b = 0x01;
@@ -314,44 +333,44 @@ void sendX1Data(UINT8 *pPacket, int replyID, short items, unsigned char *pData, 
     *(pPacket+1) = 0x55;
     packetLength += 2;
 
-    //  Set Total length
+    // Set Total length
     set16BitBE(pPacket+2, dataLength+20);
     packetLength += 2;
 
-    //  Set FROM
+    // Set FROM
     set32BitLE(pPacket+4, 2);
     packetLength += 4;
 
-    //  Set TO
+    // Set TO
     set32BitLE(pPacket+8, 2);
     packetLength += 4;
 
-    //  Set TID
+    // Set TID
     set16BitLE(pPacket+12, nX1TicketId);
     packetLength += 2;
 
-    //  Set SID
+    // Set SID
     set16BitLE(pPacket+14, nX1SessionId);
     packetLength += 2;
 
-    //  Set Command Code
+    // Set Command Code
     set32BitLE(pPacket+16, replyID);
     packetLength += 4;
 
-    //  Set Number of following Fish.X1 data structures
+    // Set Number of following Fish.X1 data structures
     set32BitLE(pPacket+20, items);
     packetLength += 4;
 
-    //  Set TA ID and Fish.X1 data
+    // Set TA ID and Fish.X1 data
     memcpy((void*)(pPacket+24), (void*)pData, dataLength);
     packetLength += dataLength;
 
-    //  Set CheckSum
+    // Set CheckSum
     nCheckSum = calcCheckSum(pPacket+2, packetLength-2);
     set16BitBE(pPacket+packetLength, nCheckSum);
     packetLength += 2;
 
-    //  Set ETX
+    // Set ETX
     *(pPacket+packetLength) = 0x03;
     packetLength++;
 

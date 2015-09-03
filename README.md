@@ -18,24 +18,28 @@ Inputs
 | I4            | A0          | Analog      |
 | I5            | A1          | Analog      |
 | I6            | A2          | Analog      |
-| I7            | -           | -           |
-| I8            | -           | -           |
+| I7            | A3          | Analog      |
+| I8            | A4          | Analog      |
 
 
 Оutputs
 
 | RP pin        | Arduino pin | RP pin mode  |
 |:------------- |:-----------:|:------------:|
-| O1            | 8           | Digital      |
-| O2            | 9           | Analog (0-8) |
-| O3            | 10          | Analog (0-8) |
-| O4            | 11          | Analog (0-8) |
-| O5            | 12          | Digital      |
-| O6            | 13          | Digital      |
-| O7            | -           | -            |
-| O8            | -           | -            |
+| O1            | 6           | Digital      |
+| O2            | 7           | Digital      |
+| O3            | 8           | Digital      |
+| O4            | 9           | Analog (0-8) |
+| O5            | 10          | Analog (0-8) |
+| O6            | 11          | Analog (0-8) |
+| O7            | 12          | Digital      |
+| O8            | 13          | Digital      |
 
 ##Version history:
+V0.2 - 03.09.2015. Changed output pins map. Now Arduino's pins 6-13 coresponds to ROBO TX pins O1-O8.
+                   Changed input pins map. Now Arduino's pins A3-A4 coresponds to ROBO TX pins I7 and I8.
+                   This version tested with ROBO Pro 4.1.8, Arduino IDE 1.0.6 and ARUDINO UNO R3 board.
+				   
 V0.1 - 03.01.2013. This version tested with ROBO Pro 3.2.0, Arduino IDE 1.0.3 and ARUDINO UNO R3 board.
 
 ##License:
