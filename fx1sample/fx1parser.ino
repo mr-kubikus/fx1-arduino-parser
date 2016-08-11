@@ -286,7 +286,7 @@ void CMD006Reply(short nItems, unsigned char *data)
   reply->X1Data.version.hardware.part.d = 0x00; 
   
   reply->X1Data.version.firmware.part.a = 0x00; // 0
-  reply->X1Data.version.firmware.part.b = 0x05; // 5 
+  reply->X1Data.version.firmware.part.b = 0x06; // 6 
   reply->X1Data.version.firmware.part.c = 0x01; // 1
   reply->X1Data.version.firmware.part.d = 0x1E; // 30  
 
