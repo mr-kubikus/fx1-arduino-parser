@@ -1,6 +1,6 @@
 # fx1-arduino-parser
 
-This is an Arduino library for communicating with ROBO Pro software over USB.
+Arduino sketch for communicating with ROBO Pro software over USB.
 
 [![ROBOPro with Arduino demo](http://img.youtube.com/vi/otV3sn2Q770/0.jpg)](http://www.youtube.com/watch?v=otV3sn2Q770)
 
@@ -12,7 +12,7 @@ The fx1-arduino-parser is a component that may be useful for a variety of projec
 3. Find which serial port used by Arduino.
 4. Start ROBO Pro.
 5. Setup Connection and Controller model: USB and ROBO TX.
-6. Choose Bluetooth connection type and then select COM port from STEP 3.
+6. Choose Bluetooth connection type and then select COM port from STEP #3.
 7. Design flow-chart.
 8. Run it in Online mode.
 
@@ -44,6 +44,12 @@ Inputs
 | O6            | 11          | Analog (0-8) |
 | O7            | 12          | Digital      |
 | O8            | 13          | Digital      |
+
+##Solution for automatic reboot problem
+
+The Arduino Uno and Nano auto reboot feature allows to upload a sketch when PC opens the connection. This behaviour leads to "Timeout" message in the ROBO Pro. 
+
+You can disablie the auto reboot feature using recomendations from [playground.arduino.cc](http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection).
 
 ##Links
 1. [Original discussion at the ftcommunity.de forum](http://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
