@@ -54,7 +54,8 @@ You can disablie the auto reboot feature using recomendations from [playground.a
 ##Links
 1. [Original discussion at the ftcommunity.de forum](http://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
 
-##Version history:
+##Version history
+
 V0.3 - 11.08.2016. Changed version.firmware.part.b by one to make it compatible with ROBO Pro 4.2.3.
 
 V0.2 - 03.09.2015. Changed output pins map. Now Arduino's pins 6-13 coresponds to ROBO TX pins O1-O8.
