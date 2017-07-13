@@ -1,3 +1,4 @@
+[English](README.md) ∙ [Русский](README-ru.md)
 # fx1-arduino-parser
 Arduino sketch for communicating with ROBO Pro software over USB.
 
