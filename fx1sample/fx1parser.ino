@@ -13,7 +13,7 @@ const int OUT7 = 12; //
 const int OUT8 = 13; // 
 
 // Inputs
-const int IN1 =  2; //
+const int IN1 =  2; // 
 const int IN2 =  3; //
 const int IN3 =  4; //
 const int IN4 = A0; // Analog
@@ -29,7 +29,7 @@ void fx1ParserInit()
   nX1TicketId  = 0;
   nX1SessionId = 0;  
   
-  // Configure the input pins:
+  // Configure the output pins:
   pinMode(OUT1, OUTPUT);
   pinMode(OUT2, OUTPUT);
   pinMode(OUT3, OUTPUT);
@@ -48,7 +48,7 @@ void fx1ParserInit()
   digitalWrite(OUT7, LOW);
   digitalWrite(OUT8, LOW);
   
-  // Configure the output pins:
+  // Configure the input pins:
   pinMode(IN1, INPUT_PULLUP);
   pinMode(IN2, INPUT_PULLUP);
   pinMode(IN3, INPUT_PULLUP); 
