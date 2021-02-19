@@ -62,6 +62,7 @@ You can disablie the auto reboot feature using recomendations from [playground.a
 
 ## <a name="links">Links
 1. [Original discussion at the ftcommunity.de forum](http://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
+2. [ROBO Pro download at the fischertechnik.de](https://www.fischertechnik.de/en/service/downloads/robotics).
 
 ## <a name="history">Version history
 V0.3 - 11.08.2016. Changed version.firmware.part.b by one to make it compatible with ROBO Pro 4.2.3.
