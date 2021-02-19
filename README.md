@@ -7,12 +7,17 @@ Arduino sketch for communicating with ROBO Pro software over USB.
 The fx1-arduino-parser is a component that may be useful for a variety of projects, including educational tools. I want developers to be able to play with fx1-arduino-parser, give feedback, and think of novel uses for it. All the code is free and open source. Enjoy!
 
 ## Table of Contents
+* [System requirements](#requirements)
 * [How to use it](#how-to-use)
 * [Pin mapping](#pin-mapping)
 * [Solution for automatic reboot problem](#solution-for-reboot)
 * [Links](#links)
 * [Version history](#history)
 * [License](#license)
+
+## <a name="requirements"></a>System requirements
+* ROBO Pro version - 4.6.6
+* USB Interface
 
 ## <a name="how-to-use"></a>How to use it
 1. Download latest fx1-arduino-parser release.
