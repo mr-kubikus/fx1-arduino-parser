@@ -58,11 +58,11 @@ The fx1-arduino-parser is a component that may be useful for a variety of projec
 ## <a name="solution-for-reboot">Solution for automatic reboot problem
 The Arduino Uno and Nano auto reboot feature allows to upload a sketch when PC opens the connection. This behaviour leads to "Timeout" message in the ROBO Pro. 
 
-You can disablie the auto reboot feature using recomendations from [playground.arduino.cc](http://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection).
+You can disablie the auto reboot feature using recomendations from [playground.arduino.cc](https://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection).
 
 ## <a name="links">Links
-1. [Original discussion at the ftcommunity.de forum](http://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
-2. [ROBO Pro download at the fischertechnik.de](https://www.fischertechnik.de/en/service/downloads/robotics).
+1. [Original discussion at the ftcommunity.de forum](https://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
+2. [ROBO Pro download at the fischertechnik.de](https://www.fischertechnik.de/de-de/apps-und-software/software-archiv).
 
 ## <a name="history">Version history
 V0.3 - 11.08.2016. Changed version.firmware.part.b by one to make it compatible with ROBO Pro 4.2.3.
