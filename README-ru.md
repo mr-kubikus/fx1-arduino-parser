@@ -64,7 +64,7 @@
 ## <a name="links">Ссылки
 1. [Исходное обсуждение на форуме ftcommunity.de forum](https://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
 2. [Загрузка ROBO Pro с сайта fischertechnik.de](https://www.fischertechnik.de/de-de/apps-und-software/software-archiv).
-3. 
+
 ## <a name="history">История проекта
 V0.3 - 11.08.2016. Changed version.firmware.part.b by one to make it compatible with ROBO Pro 4.2.3.
 
