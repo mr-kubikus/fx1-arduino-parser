@@ -58,7 +58,7 @@ The fx1-arduino-parser is a component that may be useful for a variety of projec
 ## <a name="solution-for-reboot">Solution for automatic reboot problem
 The Arduino Uno and Nano auto reboot feature allows to upload a sketch when PC opens the connection. This behaviour leads to "Timeout" message in the ROBO Pro. 
 
-You can disablie the auto reboot feature using recomendations from [playground.arduino.cc](https://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection).
+You can disablie the auto reboot feature using recomendations from [playground.arduino.cc](https://playground.arduino.cc/Main/DisablingAutoResetOnSerialConnection/).
 
 ## <a name="links">Links
 1. [Original discussion at the ftcommunity.de forum](https://forum.ftcommunity.de/viewtopic.php?f=8&t=1655).
